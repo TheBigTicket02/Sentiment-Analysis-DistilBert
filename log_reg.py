@@ -1,14 +1,12 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-import os
 import bz2
 import re
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, f1_score, confusion_matrix
 from sklearn.model_selection import train_test_split
-import eli5
 from typing import Optional
 
 TRAIN_PATH = '../input/amazonreviews/train.ft.txt.bz2'
@@ -41,7 +39,7 @@ def file_to_sentences(input_path, train = True):
         return sentences, labels
     return sentences
 
-def create_dataframe(sentences, labels: Optional(list) = None):
+def create_dataframe(sentences, labels: Optional[list] = None):
     if labels is not None:
         df = pd.DataFrame({'sentences' : sentences, 
                 'labels': labels})
