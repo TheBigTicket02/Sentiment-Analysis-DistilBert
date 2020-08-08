@@ -55,7 +55,7 @@ def prediction(model, X_train, y_train, X_valid, y_valid):
     acc = accuracy_score(y_valid, pred)
     f1 = f1_score(y_valid, pred)
     conf = confusion_matrix(y_valid, pred)
-    return acc, f1, conf
+    return model, acc, f1, conf
 
 def main():
     X, y = file_to_sentences(TRAIN_PATH)
@@ -68,8 +68,8 @@ def main():
     y = train_df.labels
     X_train, X_valid, y_train, y_valid = train_test_split(X, y, test_size=0.2, random_state=42)
     model = LogisticRegression(C=1, random_state=42, n_jobs=-1)
-    acc, f1, conf = prediction(model, X_train, y_train, X_valid, y_valid)
-    return acc, f1, conf
+    fit_model, acc, f1, conf = prediction(model, X_train, y_train, X_valid, y_valid)
+    return fit_model, acc, f1, conf
 
 if __name__ == '__main__':
     main()
