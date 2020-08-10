@@ -1,1 +1,1 @@
-Baseline: Log Reg - 90.95% f1
+Baseline: Log Reg - 90.32% Accuracy
