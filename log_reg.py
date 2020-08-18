@@ -20,7 +20,7 @@ def prediction(model, X_train, y_train, X_valid, y_valid):
     return model, acc, f1, conf
 
 
-def main():
+def main() -> None:
     train_val = pd.read_csv(TRAIN_PATH, index_col=0)
     train_val.reset_index(drop=True, inplace=True)
     transformer = TfidfVectorizer(
