@@ -2,7 +2,7 @@
 
 * Created baseline model - Logistic Regression with Tf-Idf
 * Fine-tuned DistilBert
-* Applied several techniques to increase inference speed and decrease size.
+* Applied several techniques to increase inference speed and decrease size on GPU and CPU
 
 | Models       | Accuracy |
 | -------------|:--------:|
